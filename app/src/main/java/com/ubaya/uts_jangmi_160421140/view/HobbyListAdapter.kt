@@ -32,6 +32,12 @@ class HobbyListAdapter(val hobbyList:ArrayList<Hobby>): RecyclerView.Adapter<Hob
     }
 
     override fun onBindViewHolder(holder: HobbyViewHolder, position: Int) {
+        hobbyList[position].pictureUrl?.let { holder.binding.imageHobby.loadImage(it,holder.binding.progressBarHobby) }
+        holder.binding.txtTitle.text=hobbyList[position].title
+        holder.binding.txtCreator.text=hobbyList[position].creator
+        holder.binding.txtDesc.text=hobbyList[position].description
+
+
         val hobbyList = hobbyList[position]
         hobbyList.pictureUrl?.let { holder.binding.imageHobby.loadImage(it, holder.binding.progressBarHobby) }
         hobbyList.title.let { holder.binding.txtTitle.text }

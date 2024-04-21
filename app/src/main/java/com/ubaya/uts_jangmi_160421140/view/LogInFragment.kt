@@ -26,8 +26,8 @@ class LogInFragment : Fragment() {
 
         binding.btnSignIn.setOnClickListener{
 
-            val actionSignIn = LogInFragmentDirections.actionSignin()
-            Navigation.findNavController(it).navigate(actionSignIn)
+            val action = LogInFragmentDirections.actionSign()
+            Navigation.findNavController(it).navigate(action)
         }
     }
 }
