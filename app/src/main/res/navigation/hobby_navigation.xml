@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hobby_navigation"
+    app:startDestination="@id/logInFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ubaya.uts_jangmi_160421140.view.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/actionRead"
+            app:destination="@id/readFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/readFragment"
+        android:name="com.ubaya.uts_jangmi_160421140.view.ReadFragment"
+        android:label="fragment_read"
+        tools:layout="@layout/fragment_read" >
+        <argument
+            android:name="hobby_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.ubaya.uts_jangmi_160421140.view.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_signin"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
